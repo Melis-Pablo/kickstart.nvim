@@ -126,8 +126,11 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 --  Keymap for 42header
-vim.keymap.set("n", "<leader>42h", ":Stdheader<CR>", { noremap = true, desc = "Add 42 Header" })
+vim.keymap.set("n", "<leader>42h", vim.cmd.Stdheader, { noremap = true, desc = "Add 42 Header" })
+--  Keymap for netRW
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Go back to NetRW" })
+--  Keymap for UndotreeToggle
+vim.keymap.set("n", "<leader><F5>", vim.cmd.UndotreeToggle)
 
 --==================================================================
 
@@ -217,6 +220,12 @@ require("lazy").setup({
 		config = function(_, opts)
 			require("42header").setup(opts)
 		end,
+	},
+
+	{
+		"mbbill/undotree",
+		cmd = { "UndotreeToggle" },
+		keys = { "<F5>" },
 	},
 
 	-- NOTE: Plugins can also be configured to run Lua code when they are loaded.
