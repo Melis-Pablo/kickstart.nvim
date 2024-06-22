@@ -530,6 +530,10 @@ require("lazy").setup({
 				clangd = {}, -- C/C++ LS
 				marksman = {}, -- markdown LS
 				bashls = {}, -- Bash LS
+				cmake = {}, --  cmake
+				dockerls = {}, -- Docker
+				docker_compose_language_service = {}, --  Docker Compose
+				jsonls = {}, -- jsonLS
 				efm = {
 					init_options = { documentFormatting = true },
 					settings = {
