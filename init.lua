@@ -130,7 +130,9 @@ vim.keymap.set("n", "<leader>42h", vim.cmd.Stdheader, { noremap = true, desc = "
 --  Keymap for netRW
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Go back to NetRW" })
 --  Keymap for UndotreeToggle
-vim.keymap.set("n", "<leader><F5>", vim.cmd.UndotreeToggle)
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toogle UndoTree" })
+--  Keymap for VimFugitive
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Git Status" })
 
 --==================================================================
 
@@ -226,6 +228,10 @@ require("lazy").setup({
 		"mbbill/undotree",
 		cmd = { "UndotreeToggle" },
 		keys = { "<F5>" },
+	},
+
+	{
+		"tpope/vim-fugitive",
 	},
 
 	-- NOTE: Plugins can also be configured to run Lua code when they are loaded.
