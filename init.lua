@@ -127,6 +127,7 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 --  Keymap for 42header
 vim.keymap.set("n", "<leader>42h", ":Stdheader<CR>", { noremap = true, desc = "Add 42 Header" })
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Go back to NetRW" })
 
 --==================================================================
 
@@ -770,6 +771,9 @@ require("lazy").setup({
 
 			-- You can configure highlights by doing something like:
 			vim.cmd.hi "Comment gui=none"
+			--  Transparency
+			vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 		end,
 	},
 
