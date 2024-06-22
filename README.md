@@ -31,6 +31,7 @@ External Requirements:
   - If want to write Typescript, you need `npm`
   - If want to write Golang, you will need `go`
   - etc.
+- For BashLS install node and npm
 
 > **NOTE**
 > See [Install Recipes](#Install-Recipes) for additional Windows and Linux specific notes
