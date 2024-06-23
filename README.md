@@ -32,6 +32,7 @@ External Requirements:
   - If want to write Golang, you will need `go`
   - etc.
 - For BashLS install node and npm
+- Markdownlint-cli (npm install)
 
 > **NOTE**
 > See [Install Recipes](#Install-Recipes) for additional Windows and Linux specific notes
