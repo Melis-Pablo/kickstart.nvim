@@ -167,7 +167,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- when you copy allows to then select and delete without overwriting buffer
 vim.keymap.set("x", "<leader>p", '"_dP')
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make file executable" })
-
+-- Neotree keymap
+vim.keymap.set("n", "<leader>tb", ":Neotree toggle<CR>", { desc = "[T]oggle Side [B]ar" })
 --==================================================================
 
 -- [[ Basic Autocommands ]]
@@ -266,6 +267,18 @@ require("lazy").setup({
 
 	{
 		"tpope/vim-fugitive",
+	},
+
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		},
+		opts = {},
 	},
 
 	-- NOTE: Plugins can also be configured to run Lua code when they are loaded.
