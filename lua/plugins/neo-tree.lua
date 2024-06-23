@@ -3,7 +3,7 @@
 
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	-- lazy = false,
+	lazy = false,
 	version = "*",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -18,8 +18,14 @@ return {
 		filesystem = {
 			window = {
 				width = 25,
+				hijack_netrw_behavior = "open_current", -- netrw disabled, opening a directory opens within the window like netrw would, regardless of window.position
 				mappings = {
-					["\\"] = "close_window",
+					["%"] = "add", -- Create a new file
+					["d"] = "add_directory", -- Create a new directory
+					["D"] = "delete", -- Delete a file or directory
+					["r"] = "rename", -- Rename a file or directory
+					["q"] = "close_window", -- Close Neotree window
+					["<CR>"] = "open", -- Open file or directory
 				},
 			},
 		},
