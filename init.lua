@@ -88,6 +88,26 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 5
 
+--  4 space indenting
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+vim.opt.smartindent = true
+
+--  no vim backup but allow undotree plugin to have acces to long running undo's
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
+vim.opt.undofile = true
+
+--  incremental search enabled
+vim.opt.incsearch = true
+
+--  terminal gui colors
+vim.opt.termguicolors = true
+
 --==================================================================
 
 -- [[ Basic Keymaps ]]
@@ -126,13 +146,27 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 --  Keymap for 42header
-vim.keymap.set("n", "<leader>42h", vim.cmd.Stdheader, { noremap = true, desc = "Add 42 Header" })
+vim.keymap.set("n", "<leader>h", vim.cmd.Stdheader, { noremap = true, desc = "Add 42 Header" })
 --  Keymap for netRW
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Go back to NetRW" })
+vim.keymap.set("n", "<leader>ex", vim.cmd.Ex, { desc = "Go back to NetRW" })
 --  Keymap for UndotreeToggle
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toogle UndoTree" })
 --  Keymap for VimFugitive
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Git Status" })
+
+--  The best remaps of your life -TheVimagen
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+vim.keymap.set("n", "J", "mzxJ'z", { desc = "appends line bellow to EOL" })
+-- keeps cursor in the same place while using ctrl-d & ctrl+u (half page jumps)
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- keeps search terms in the middle
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+-- when you copy allows to then select and delete without overwriting buffer
+vim.keymap.set("x", "<leader>p", '"_dP')
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make file executable" })
 
 --==================================================================
 
