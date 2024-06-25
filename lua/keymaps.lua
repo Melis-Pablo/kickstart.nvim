@@ -55,3 +55,12 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toogle UndoTr
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Git Status" })
 --  Keymap for 42header
 vim.keymap.set("n", "<leader>h", vim.cmd.Stdheader, { noremap = true, desc = "Add 42 Header" })
+-- Terminal keymap
+-- Vertical split with 80 columns
+vim.keymap.set("n", "<leader>ttv", function()
+	vim.cmd "vnew +terminal | vertical resize 80"
+end, { desc = "Open terminal in vertical split with 80 columns" })
+-- Horizontal split with 30 rows
+vim.keymap.set("n", "<leader>tth", function()
+	vim.cmd "new +terminal | resize 30"
+end, { desc = "Open terminal in horizontal split with 30 rows" })
