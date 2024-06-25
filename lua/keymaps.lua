@@ -64,3 +64,5 @@ end, { desc = "Open terminal in vertical split with 80 columns" })
 vim.keymap.set("n", "<leader>tth", function()
 	vim.cmd "new +terminal | resize 30"
 end, { desc = "Open terminal in horizontal split with 30 rows" })
+-- Toggle transparency
+vim.keymap.set("n", "<leader>ttp", ":TransparentToggle<CR>", { desc = "[T]oggle [T]rans[p]arency" })
